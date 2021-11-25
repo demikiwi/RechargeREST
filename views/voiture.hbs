@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Monitor device</title>
+    <style>
+      body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
+      #form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
+      #input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
+      #input:focus { outline: none; }
+      #form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages > li { padding: 0.5rem 1rem; }
+      #messages > li:nth-child(odd) { background: #efefef; }
+      .titre{ padding-left: 80px;}
+    </style>
+    </head>
+    <body>
+        <div>
+            <h1 class="titre">Super-chargeur finder</h1>
+            <br>
+            <a href="/"><button>Acceuil</button></a>
+        </div>
+        <div class="voiture_description">
+            <h3>la voiture {{modele_pre}} est utilisée</h3>
+            <h4>Autonomie maximum de la voiture: {{autonomie_pre}}</h4>
+        </div>
+
+        <div class="trajet">
+           <form action="/trajet" method="post">
+            
+            <label for="longitude_a"><span>Longitude point a</span>
+              <input type="text" class="input-field" name="long_a" value="" />
+            </label>
+            <label for="latitude_a"><span>Latitude point a</span>
+              <input type="text" class="input-field" name="lat_a" value="" />
+            </label>
+            <label for="longitude_a"><span>Longitude point b</span>
+              <input type="text" class="input-field" name="long_a" value="" />
+            </label>
+            <label for="longitude_a"><span>Latitude point b</span>
+              <input type="text" class="input-field" name="lat_b" value="" />
+            </label>
+            <label for="autonomie"><span>Autonomie</span>
+              <input type="text" class="input-field" name="autonomie" value="{{autonomie_pre}}" />
+            </label>
+
+            <label><span> </span><input type="submit" value="Submit" /></label>
+
+           </form>
+        </div>
+    </body>
+</html>
