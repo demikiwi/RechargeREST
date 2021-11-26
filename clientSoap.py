@@ -17,5 +17,7 @@ def get_distance() :
 	return result
 
 retour = get_distance()
-sys.stdout.write(retour)
-sys.stdout.flush()
+file = open("buffer.json")
+file.append(retour)
+file.write()
+file.close
