@@ -54,13 +54,13 @@ app.post('/voiture', (req,res) => {
 app.post('/trajet', (req,res) => {
     form_data = req.body
 
-    raw_data = recharge.get_recharge(form_data.long_a,form_data.lat_a,form_data.long_b,form_data.lat_a,form_data.autonomie)
-
-    res.render('trajet', {
-        layout: false,
-        duree_pre: raw_data.duree,
-        message_pre: raw_data.message,
-        duree_recharge_pre : raw_data.temps_recharge
+    raw_data = recharge.get_recharge(form_data.long_a,form_data.lat_a,form_data.long_b,form_data.lat_a,form_data.autonomie).then(value => {
+        res.render('trajet', {
+            layout: false,
+            duree_pre: raw_data.duree,
+            message_pre: raw_data.message,
+            duree_recharge_pre : raw_data.temps_recharge
+        })
     })
 });
 

@@ -12,11 +12,14 @@ module.exports = {
             autonomie
             ] );
 
-        return childPython.stdout.on('data', (data) => {
-            output += data.toString()
-            console.log(output)
-            return output
-        })
 
+
+        return new Promise((resolve, reject) => {
+            childPython.stdout.on('data', (data) => {
+                output += data.toString()
+                console.log(data)
+                resolve(output) 
+            })
+        })
     }
 }
