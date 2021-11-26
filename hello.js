@@ -59,7 +59,8 @@ app.post('/trajet', (req,res) => {
     res.render('trajet', {
         layout: false,
         duree_pre: raw_data.duree,
-        message_pre: raw_data.message
+        message_pre: raw_data.message,
+        duree_recharge_pre : raw_data.temps_recharge
     })
 });
 
