@@ -17,7 +17,7 @@ module.exports = {
             console.log("coucou")
         })
 
-        const buffer = require('buffer.json')
+        const buffer = require('./buffer.json')
 
         return buffer
 
