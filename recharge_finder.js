@@ -13,6 +13,10 @@ module.exports = {
             autonomie
         ]);
 
+        childPython.stdout.on('data', (data) => {
+            console.log("coucou")
+        })
+
         const buffer = require('buffer.json')
 
         return buffer
