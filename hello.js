@@ -56,7 +56,7 @@ app.post('/trajet', (req,res) => {
 
     duree = recharge.get_recharge(form_data.long_a,form_data.lat_a,form_data.long_b,form_data.lat_a,form_data.autonomie)
 
-    //console.log(duree)
+    console.log(duree)
     // res.render('voiture', {
     //     layout: false,
 
