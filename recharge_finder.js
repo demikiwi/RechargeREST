@@ -17,7 +17,7 @@ module.exports = {
         return new Promise((resolve, reject) => {
             childPython.stdout.on('data', (data) => {
                 output += data.toString()
-                console.log(data)
+                console.log(data.toString())
                 resolve(output) 
             })
         })
