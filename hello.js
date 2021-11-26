@@ -54,13 +54,13 @@ app.post('/voiture', (req,res) => {
 app.post('/trajet', (req,res) => {
     form_data = req.body
 
-    duree = recharge.get_recharge(form_data.long_a,form_data.lat_a,form_data.long_b,form_data.lat_a,form_data.autonomie)
+    raw_data = recharge.get_recharge(form_data.long_a,form_data.lat_a,form_data.long_b,form_data.lat_a,form_data.autonomie)
 
-    console.log(duree)
-    // res.render('voiture', {
-    //     layout: false,
-
-    // })
+    res.render('trajet', {
+        layout: false,
+        duree_pre: raw_data.duree,
+        message_pre: raw_data.message
+    })
 });
 
 

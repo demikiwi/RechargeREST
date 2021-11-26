@@ -7,7 +7,7 @@ module.exports = {
         const childPython = spawn('python3', ["./clientSoap.py",
             lat_a,
             long_a,
-	    lat_b,
+	        lat_b,
             long_b,
             autonomie
             ] );
