@@ -13,9 +13,7 @@ module.exports = {
             ] );
 
 
-        childPython.stdout.on('error', (error) => {
-            console.log(error)
-        })
+
 
         return new Promise((resolve, reject) => {
             childPython.stdout.on('data', (data) => {
@@ -25,6 +23,11 @@ module.exports = {
                 resolve(output) 
                 
             })
+            childPython.stdout.on('error', (error) => {
+                console.log(error)
+                reject(error)
+            })
         })
     }
+    
 }
