@@ -14,6 +14,7 @@ module.exports = {
 
         return childPython.stdout.on('data', (data) => {
             output += data.toString()
+            console.log(output)
             return output
         })
 
