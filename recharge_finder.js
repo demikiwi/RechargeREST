@@ -12,11 +12,10 @@ module.exports = {
             autonomie
             ] );
 
-        childPython.stdout.on('data', (data) => {
+        return childPython.stdout.on('data', (data) => {
             output += data.toString()
+            return output
         })
-
-	return output
 
     }
 }
