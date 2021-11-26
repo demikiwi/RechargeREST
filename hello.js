@@ -61,7 +61,7 @@ app.post('/trajet', (req,res) => {
             message_pre: raw_data.message,
             duree_recharge_pre : raw_data.temps_recharge
         })
-    })
+    }).catch(err => console.log(err))
 });
 
 
