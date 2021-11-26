@@ -18,4 +18,4 @@ def get_distance() :
 
 retour = get_distance()
 sys.stdout.write(retour)
-sys.stdout.flush()
+sys.stdout.flush(retour)
