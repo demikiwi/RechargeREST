@@ -1,9 +1,20 @@
 import zeep
 import sys
 
-wsdl = "http://mycv.glaivemedia.fr/?wsdl"
+wsdl = "http://127.0.0.1/?wsdl"
 client = zeep.Client(wsdl)
 
-result = client.service.tempsParcours(sys.argv[1], sys.argv[2], sys.argv[3],sys.argv[4],sys.argv[5])
+lata = sys.argv[1]
+longa = sys.argv[2]
+latb = sys.argv[3]
+longb = sys.argv[4]
+autonomie = sys.argv[5]
 
-print(result)
+def get_distance() :
+
+	result = client.service.tempsParcours(lata, longa, latb, longb, autonomie)
+
+	return result
+
+retour = get_distance()
+sys.stdout.write(retour)
